@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+
+{% load staticfiles %}
+
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+
+    {% block title %}About{% endblock %}
+
+</head>
+{% block side_block %}
+    <p>这是一个侧边栏</p>
+{% endblock %}
+
+{% block body_block %}
+    <P>这是一个关于页面</P>
+    <img src="{% static "image/tumblr_n173s4bcxL1ryxzr3o1_1280.JPG" %}" name="zhu" width="50%" height="50%">
+
+{% endblock %}
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+    {% block body_block %}
+        <h1>DOC says...</h1>
+        hello world! <strong>{{ boldmessage }}</strong><br />
+
+        {% if documents %}
+            <table class="table table-bordered table-striped">
+
+                {% for doc in documents %}
+                    <tr>
+                    <td>
+                        <a href="/doc/{{ doc.doc_no }}"> {{ doc.full_name }}</a>
+                    </td>
+                    <td>{{ doc.doc_no }}</td>
+                    <td>{{ doc.dead_date }}</td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        {% else %}
+            <strong>没有文档</strong>
+        {% endif %}
+        <p class="lead">我试试是什么样子的</p>
+        <img src="http://127.0.0.1:8000/media/092008635321136086623750792906206.jpg" alt = "test_pic"/>
+    {% endblock %}
+
+</html>
